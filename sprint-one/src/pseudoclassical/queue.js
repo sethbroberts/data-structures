@@ -12,11 +12,15 @@ Queue.prototype.size = function () {
 
 Queue.prototype.enqueue = function (value) {
   this.back++;
+  this.storage[this.back] = value;
 };
 
 Queue.prototype.dequeue = function () {
   if (this.size() > 0) {
     this.front++;
+    var result = this.storage[this.front];
+    delete this.storage[this.front];
   }
+  return result;
 };
 
