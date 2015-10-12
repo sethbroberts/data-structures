@@ -17,12 +17,13 @@ HashTable.prototype.insert = function(k, v){
   if ['bob', 'barker'] in arrAtAddressI, then overwrite with ['bob', 'dole']
   if [k1, v1] in the array, and adding [k2, v2] and k1 === k2, then overwrite
   */
-  for (var j = 0; j<arrAtAddressI.length; j++) {
+  // check if same key is already in there
+  for (var j = 0; j < arrAtAddressI.length; j++) {
     if (arrAtAddressI[j][0] === k) {
       arrAtAddressI[j][1] = v;
     }
   }
-  arrAtAddressI.push([k,v]); // check if same key is already in there
+  arrAtAddressI.push([k,v]); 
   this._storage.set(i, arrAtAddressI); // [[k,v]]
 
 };
